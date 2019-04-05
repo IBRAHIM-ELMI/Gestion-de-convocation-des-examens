@@ -1,0 +1,420 @@
+\documentclass[slidetop,18pt, mathserif]{beamer}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{color}
+\usepackage[latin 1]{inputenc} % accents 8 bits dans le source
+\usepackage[T1]{fontenc} % accents dans le DVI
+\usepackage[frenchb]{babel} % franciser LaTeX (biblio ...)
+\usepackage{url} % Pour écrire des adresses cliquables.
+\usepackage{lmodern} % Pour changer le pack de police.
+%\usepackage[top=2cm, bottom=1cm, left=1cm, right=1cm]{geometry} % Les marges.
+\usepackage{color}
+\usepackage{graphicx}
+%\author{\fbox{\Huge{\textsc{Filtre de Kalman} - \textsc{Prédiction-Correction}}}}
+\usepackage{amssymb,euscript,mathrsfs,amsmath,amsthm,color}
+\documentclass{article}
+\usepackage{fancybox}
+\usepackage{lipsum}% just to generate some text
+%CHOIX DU THEME et/ou DE SA COULEUR
+% => essayer diffÃ©rents thÃ¨mes (en dÃ©commantant une des trois lignes suivantes)
+%\usetheme{PaloAlto}
+%\usetheme{Madrid}
+%\usetheme{Copenhagen}
+%\usetheme{Warsaw}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% THEME
+  %\usetheme{AnnArbor}
+  %\usetheme{Antibes}
+  %\usetheme{Bergen}
+  %\usetheme{Berkeley}
+  %\usetheme{Berlin}
+  %\usetheme{Boadilla}
+  %\usetheme{boxes}
+  %\usetheme{CambridgeUS}
+  %\usetheme{Copenhagen}
+  %\usetheme{Darmstadt}
+ % \usetheme{default}
+  %\usetheme{Dresden}
+  %\usetheme{Frankfurt}
+  %\usetheme{Goettingen}
+  %\usetheme{Hannover}
+  %\usetheme{Ilmenau}
+  %\usetheme{JuanLesPins}
+  %\usetheme{Luebeck}
+  %\usetheme{Madrid}
+  %\usetheme{Malmoe}
+  %\usetheme{Marburg}
+  %\usetheme{Montpellier}
+  %\usetheme{PaloAlto}
+  %\usetheme{Pittsburgh}
+  %\usetheme{Rochester}
+  %ff\usetheme{Singapore}
+  %\usetheme{Szeged}
+  \usetheme{CambridgeUS}
+% => il est possible, pour un thÃ¨me donnÃ©, de modifier seulement la couleur
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% COLOR THEME
+  %\usecolortheme{albatross}
+ %\usecolortheme{beetle}
+ %\usecolortheme{crane}
+ %\usecolortheme{default}
+ %\usecolortheme{dolphin}
+ % \usecolortheme{dove}
+  %\usecolortheme{fly}
+  %\usecolortheme{lily}
+  %\usecolortheme{orchid}
+  %\usecolortheme{rose}
+  %\usecolortheme{seagull}
+  %\usecolortheme{seahorse}
+  %\usecolortheme{sidebartab}
+  %\usecolortheme{structure}
+  %\usecolortheme{whale}
+
+%\usecolortheme{crane}
+%\usecolortheme{seahorse}
+\mode<presentation> {
+    \usetheme{Frankfurt} %Bergen, Berkely, Berlin, Boadilla, CambridgeUS, Darmstadt,
+                          %Frankfurt, Goettingen, Singapore, Warsaw
+    \usecolortheme{default} %beetle, seahorse, wolverine, dolphin, beaver
+}
+\useoutertheme[left]{sidebar}
+%Pour le TITLEPAGE
+\title{\textbf{Module java de génération de code SVG}}
+\subtitle{Master1}
+\subtitle{Parcours:Informatique}
+\author[]{\textbf{Realis\'e Par:IBRAHIM ELMI Youssouf \\IBRAHIM ABANEH Moustapha \\ \large Encadrant: Frédéric SERIN}}}
+\date{\textbf{Mardi 07 Juin 2016}}
+\institute[\textbf{UFR -- FS}]{\textbf{Université du Havre -- Faculté des sciences}}
+
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{\textbf{\textcolor{white}{Plan Du Projet}}}
+\bigskip
+\begin{columns}{\textwidth}
+  \begin{column}{11cm}
+  \begin{alertblock}{\textbf{Les points que nous aborderons}}
+\begin{enumerate}
+\item \textbf{INTRODUCTION \ \\          
+\item \textbf{Qu \' est ce que SVG \ \\
+\item \textbf{Pourquoi SVG \ \\  
+ \item Visualisation \ \\
+\item Format SVG \ \\    
+ \item Pr\'esentation du programme r\'ealis\'e \ \\    
+ \item Conclusion}\ \\  
+ \end{enumerate}
+ \end{alertblock} 
+  \end{column}
+\end{frame}
+  \begin{column}{1cm}
+  \end{column}
+  \end{columns}  
+\end{frame}
+
+
+
+ \section{INTRODUCTION}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{INTRODUCTION }}}
+\begin{block}{{\textbf{Introduction}}}
+        
+e projet s’intègre dans un projet plus vaste de génération de fichier HTML à partir d’un
+fichier texte simple. Le démonstrateur déjà existant et opérationnel permet de réaliser
+des documents correctement mis en forme à partir d’une syntaxe légère et entièrement
+accessible. Le double but recherché est d’une part de proposer un outil de réalisation
+simple et efficace à l’usage des mal-voyants et d’autre part, de proposer une structure de
+réaliser.\\
+Actuellement, ce démonstrateur permet d’introduire des titres, des tableaux, des listes et de
+mettre des parties de texte en gras ou en italique. On attend aussi d’autres fonctionnalités
+secondaires parmi ceux dont on parle, transformation de diagrammes UML en SVG, la
+représentation en SVG des courbes...etc.
+
+
+
+ \section{Qu\' est ce que SVG}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Qu'est ce que }}}
+\begin{block}{{\textbf{Qu' est ce que SVG}}}
+        
+SVG(Scalable Vector Graphics) est un langage xml qui permet d’écrire des
+graphiques vectoriels 2D. Il a été inventé en 1998 par un groupe de travail (comprenant
+Microsoft, Autodesk, Adobe, IBM, Netscape, Xerox, Apple, HP, ILOG...) pour répondre à
+un besoin de graphiques légers, dynamiques et interactifs.
+En octobre 1998, une première ébauche du langage est sortie. Ainsi, en juin 2000 apparaît
+la première version du Viewer Adobe (plugin permettant de visualiser le svg). Adobe a
+intégré ce langage dans la plupart de ses éditeurs (comme Illustrator).
+
+        
+        \end{block}
+\end{frame}
+
+
+\section{Pourquoi SVG}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Pourquoi SVG }}}
+\begin{block}{{\textbf{Pourquoi SVG}}}
+        
+SVG(Scalable Vector Graphics) est un langage xml qui permet d’écrire des
+graphiques vectoriels 2D. Il a été inventé en 1998 par un groupe de travail (comprenant
+Microsoft, Autodesk, Adobe, IBM, Netscape, Xerox, Apple, HP, ILOG...) pour répondre à
+un besoin de graphiques légers, dynamiques et interactifs.
+En octobre 1998, une première ébauche du langage est sortie. Ainsi, en juin 2000 apparaît
+la première version du Viewer Adobe (plugin permettant de visualiser le svg). Adobe a
+intégré ce langage dans la plupart de ses éditeurs (comme Illustrator).
+
+        
+        \end{block}
+\end{frame}
+
+\section{Pourquoi SVG}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Pourquoi SVG }}}
+\begin{block}{{\textbf{Pourquoi SVG}}}
+\item[$\bullet$] SVG definit un certain nombre d’element graphique de base. Voici la liste des elements les
+plus importants : \\ \\ \pause 
+\begin{itemize}
+\item[$\bullet$] Text avec texte ; \\  
+\item[$\bullet$] Rectangles rect ; \\ 
+\item[$\bullet$] Le cercle circle et l’ellipse ellipse ; \\ 
+\item[$\bullet$] Lignes line et poly-lignes polyline ; \\ 
+\item[$\bullet$] Polygones ; \\ 
+\item[$\bullet$] Formes arbitraire avec path. \\
+\end{itemize}
+ \end{block}
+\end{frame}
+
+
+
+\section{Visualisation}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Visualisation }}}
+%\begin{block}{} 
+\includegraphics[height=0.8\textheight]{ta.jpg} \\
+\includegraphics[height=0.8\textheight]{taa.jpg} \\
+\includegraphics[height=0.8\textheight]{taaa.jpg} \\
+%\end{block}
+\end{frame}
+
+
+
+\section{Format SVG}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{ Format SVG }}}
+    \begin{block}{\textbf{Structure de base}}
+        
+\item[$\bullet$] Dans tous documents SVG doit toujours commencer par la déclaration XML, comme
+ceci : \\ \\ \pause 
+\begin{itemize}
+\item[$\sqrt$] <?xml version="1.0" standalone="no"?> \\ \pause  
+\end{itemize}
+
+ \item[$\sqrt$] La DTD du SVG s’inclut avec la balise < !DOCTYPE>, comme ceci : \\ \pause 
+ \begin{itemize}
+ \item[$\sqrt$] <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \\ \pause 
+  \end{itemize}
+ 
+ 
+ \item[$\sqrt$] La taille de la fenêtre SVG est définie par les attributs width et height de l’element svg : \\ \pause 
+ \begin{itemize}
+ \item[$\sqrt$] <svg width="15.0cm" height="15.0cm" viewBox="100 100 200 600" zoomAndPan="disable" xmlns="http://www.w3.org/2000/svg" version="1.1"> \\ \pause 
+  \end{itemize}
+  
+
+
+
+
+\section{Programme r\'ealis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Programme r\'ealis\'e }}}
+\begin{block}{{\textbf{Point}}}
+
+
+public class Point { \\
+
+private int x; \\
+private int y; \\
+
+public Point(int x, int y) { \\
+this.x = x; \\
+this.y = y; \\
+}
+
+public int getX() { \\
+return x; \\
+}
+
+public int getY() { \\
+return y; \\
+}\\
+} \\
+
+
+\end{block}
+\end{frame}
+
+
+
+
+\section{Programme r\'ealis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Programme r\'ealis\'e }}}
+\begin{block}{{\textbf{Courbe}}}
+
+public class Courbe {
+
+LinkedList<Point> points;
+
+private boolean empty;
+int x_min;
+int y_min;
+int x_max;
+int y_max;
+
+public Courbe() {
+points = new LinkedList<Point>();
+empty = true;
+}
+   \end{block}
+\end{frame}
+
+
+\section{Programme r\'ealis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Programme r\'ealis\'e }}}
+\begin{block}{{\textbf{Courbe}}}
+
+void addPoint(Point p) {
+if (empty) {
+empty = false;
+x_max = p.getX();
+x_min = p.getX();
+y_max = p.getY();
+y_min = p.getY();
+} else {
+if (x_max<p.getX()) x_max = p.getX();
+else if (x_min>p.getX()) x_min = p.getX();
+if (y_max<p.getY()) y_max = p.getY();
+else if (y_min>p.getY()) y_min = p.getY();
+}
+points.add( p);
+} // fin méthode addPoint
+
+public void add(int x, int y) {
+addPoint(new Point (x,y));
+} // fin méthode add
+
+} // fin classe Courbe
+   \end{block}
+\end{frame}
+
+
+
+\section{Programme r\'ealkis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Programme r\'ealkis\'e }}}
+\begin{block}{{\textbf{Les axes}}}
+
+\item[$\sqrt$] Pour la droite abscisse (X) voici le code java qui permet de tracer la droite : \\ \pause 
+
+ \begin{itemize}
+ \item[$\sqrt$] String absci = "<path d=\"M"; \\  
+ \item[$\sqrt$] for (Point point : abscisse.points) { \\ 
+ \item[$\sqrt$] absci =absci + (point.getX()-decalage_droite) +","+(hauteur - (point.getY()-decalage_haut)) +" "; \\ 
+ \item[$\sqrt$] } \\ 
+ \item[$\sqrt$] absci = absci + " stroke=red fill=transparent stroke-width=6 />"; \\
+ \item[$\sqrt$]lignesSVG.add(absci); \\
+
+  \end{itemize}
+ \end{block}
+\end{frame}
+
+
+
+\section{Programme r\'ealis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Programme r\'ealis\'e }}}
+\begin{block}{{\textbf{Les axes}}}
+
+\item[$\sqrt$] Pour la droite ordonnée (y) voici le code dans la classe tracer qui permet de tracer la droite (Y) : \\ \pause 
+
+ \begin{itemize}
+ String ordon = "<path d=M"; \\  
+for (Point point : ordonne.points) { \\ 
+ordon = ordon + (point.getX()-decalage_droite) +","+(hauteur - (point.getY()-decalage_haut)) +; \\ 
+} \\ 
+ ordon = ordon + " stroke=red fill=transparent stroke-width=\"6 />"; \\
+ \item[$\sqrt$] lignesSVG.add(ordon); \\
+
+  \end{itemize}
+ \end{block}
+\end{frame}
+
+
+
+
+\section{Programme r\'ealis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Programme r\'ealis\'e }}}
+\begin{block}{{\textbf{Les \'etiquettes}}}
+
+\item[$\sqrt$]  il est utile de utiliser le balise du groupe <g/> : \\ \pause 
+
+ \begin{itemize}
+ <g font-size="10" font-weight=blond" font-family="sans-serif" fill="black" stroke="none"textanchor="middle"> <text x="0" y="100" >000100</text> <text x="200" y="400" >150</text>
+<text x="0" y="400" >00</text> <text x="300" y="400" >200</text> </g> \\
+
+  \end{itemize}
+ \end{block}
+\end{frame}
+
+
+
+\section{Programme r\'ealis\'e}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Visualisation de la courbe }}}
+\begin{block}{{\textbf{Visualisation de la courbe}}}
+
+\includegraphics[height=0.8\textheight]{have.jpg} \\
+
+ \end{block}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusion}
+\begin{frame}
+\frametitle{\textcolor{white}{\textbf{Conclusion}}} 
+J'ai rencontré des difficultés certes telles que la génération de codes java qui m'a pris de temps, enfin j'ai réussi Ã  résoudre pour l'implémentation. Mais je n'ai pas eu de temps pour prévoir le tracer de deux courbes et de les colorier leurs surfaces et vraiment, je suis navré de n'est pas finir le TPE. En effet, je suis très fier de réaliser la plus parts du TPE et j'ai appris des connaissance pour la domaine de SVG mais aussi du java.\\[0.4cm]
+Enfin, j'espère avoir réussi Ã  porter les points essentiels de ce travail et d'y avoir contribué. L'objectif étant que les futurs générations puisse améliorer mon travail et de développer leurs compétences pour obtenir des représentations plus abouties..\\\\
+\end{frame}
+
+
+
+
+
+
+
+\end{document}

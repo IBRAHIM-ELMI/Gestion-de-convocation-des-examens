@@ -1,0 +1,309 @@
+\documentclass[fleqn,11pt]{report}
+\documentclass[]{article}
+\newcommand{\logo}[1]{\textsc{#1}}
+\newcommand{\superemph}[1]{*#1*}
+\usepackage[francais,french]{babel}
+\usepackage{graphicx}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb,euscript,mathrsfs,amsmath,amsthm,color}
+\title{Théorème de Mazur-Ulam}
+\date{}
+\author{}
+
+\renewcommand{\theenuni}{\Roman {enuni}}
+\renewcommand{\theenunii}{\Alph{enunii}}
+\renewcommand{\theenuniii}{\arabic{enuniii}}
+\newtheorem{Faculté des Sciences}{Faculté des Sciences}{\bf}{\it}
+\newtheorem{Présentation}{Présentation}{\bf}{\it}
+\newtheorem{Historique}{Historique}{\bf}{\it}
+
+\newtheorem{Conception et réalisation  de l'application }{Conception et réalisation  de l'application}{\bf}{\it}
+\newtheorem{Conception de la base de donnée avec MySQl}{Conception de la base de donnée avec MySQl}}{\bf}{\it}
+\newtheorem{Conception avec NetBeans}{Conception avec NetBeans}}{\bf}{\it}
+\newtheorem{CONCLUSION}{CONCLUSION}{\bf}{\it}
+\newtheorem{INTRODUCTION}{INTRODUCTION}{\bf}{\it}
+\definecolor{gray}{gray}{0.85}
+\newlength{\plarg}
+\setlength{\plarg}{14cm}
+\newlength{\glarg}
+\setlength{\glarg}{17cm}
+\textheight=21cm
+\textwidth=15cm
+\voffset=-1 cm
+\hoffset=-2cm
+\makeindex
+\begin{document}
+\begin{titlepage}
+\voffset=-1,5cm
+\hoffset=-2cm
+\thispagestyle{empty}
+
+\noindent
+\begin{minipage}{\glarg}
+{\Large \includegraphics[width=0.2\textwidth]{uud.png}}
+\end{minipage}
+\begin{center}\\\\
+\noindent {\large \textbf{UNIVERSITÉ DE DJIBOUTI}} \\ \vspace{1cm}
+
+\noindent {\LARGE \textbf{FACULTÉ DE SCIENCE FS}} \\
+\noindent \textbf{DÉPARTEMENT MATHÉMATIQUE-INFORMATIQUE} \\
+\vspace*{0.5cm}
+\title{GESTION DE CONVOCATION DES EXAMENS A LA FACULTÉ DE SCIENCES} \\
+\vspace*{0.4cm}
+\noindent \large {Mémoire de Licence 3éme année pour} \\
+\vspace*{0.3cm}
+\noindent \LARGE \textbf{Fin d'étude du 3éme Cycle} \\
+\vspace*{0.3cm}
+\noindent \Large de l'Université de Djibouti \\
+\noindent \Large Option : \textsc{Informatique}}\\\\
+\vspace*{0.4cm}
+Travail réaliser et présente à\\ \vspace{2mm}
+{\large\bfseries l'Université de Djibouti}\\ \vspace{1mm}
+par \\ \vspace{2mm}
+$\bigstar$ {\large\textbf{MAHDI HOUSSEIN AHMED    }}\\  
+$\bigstar${\large\textbf{YOUSSOUF IBRAHIM ELMI   }}\\   
+$\bigstar${\large\textbf{MOHAMED AHMED DJAMA     }}\\     
+$\bigstar${\large\textbf{ABDOURAHMAN ELMI RAYALEH}}\\  \vspace{0.3cm}				  
+Encadre par \\ \vspace{0.3cm}
+$\hookrightarrow${\large\textbf{Mr WARSAMA OMAR ALI}\\ 
+$\hookrightarrow${\large\textbf{Dr IBRAHIM ABDI HADI}}\\
+
+\end{center}
+\end{titlepage}
+
+\baselineskip=18pt
+\newpage\chapter*{Remerciements}{\bf}{\it}
+\addcontentsline{toc}{chapter}{Remerciements}
+\thispagestyle{plain}
+\includegraphics[scale=1]{remerci.png} \\\\
+Avant d'entamer la rédaction de notre projet, nous tenons compte à remercier l'ensemble du personnel qui nous on entamer d'aide, pour leurs accueil et leurs aimable participation à notre projet. En particulier, Mr Moussa, pour son aide et le soutiens qu'il nous a fournis, Mr Waberi kayad, pour son savoureux cyber café.
+Je remercie la faculté des sciences sincèrement la secrétariat du doyen Mlle Idil Mahamoud Robleh pour l'aide d'imprimant concernant à notre projet.
+
+Mon attention se tourne également vers Dr. Ibrahim Abdi Hadi et Mr. Warsama Omar Ali, qui a suivi le projet en tant que notre prof mais en tant que notre encadreur.
+
+Mes remerciements s'adressent enfin à nos proches, qui ont œuvré pour que ce
+Projet soit rédigé dans le meilleur aspect.
+
+
+
+
+
+
+\tableofcontents
+\baselineskip=21pt
+
+\textbf{  }
+
+
+\newpage\chapter{INTRODUCTION}{\bf}{\it}
+\begin{large}
+ Dans le cadre de la formation des étudiants de Maths-Info, en année de Licence Informatique, il est prévu de réaliser des projets tutoriels afin de tester le niveau de compréhension des étudiants et de mettre en pratique les connaissances accumulées lors de la première année Maths-Info jusqu'au licence Informatique à l'université de Djibouti. Cette immersion dont la réalisation du projet avait pour objectif de faire découvrir aux étudiants le cadre dans lequel ils seront amenés à travailler et de les aiguiser à la conduite d'un projet, en situation d'autonomie plus ou moins prononcée. Ce dernier est l'un des modules les plus importants pour l'année de licence.\\\\\\
+
+
+
+      Ainsi, ce projet dur deux mois et quinze jours. Notre volume horaire était environs douze heures par semaine. Et la mission qui nous a été confiée d'après nos choix, était  de réaliser un projet d'application java pour la gestion de convocation des examens pour la faculté de sciences, afin d'avoir une application qui sera utiliser par la faculté de sciences de l'Université de Djibouti.\\\\\\
+
+
+
+
+      Notre thème sera abordé de la manière suivante : d'abord nous allons présenter la faculté de sciences puis présenter le sujet tout en énumérant les outils nécessaires à sa réalisation, ensuite nous procéderons à une analyse du thème. Enfin, nous parlerons de l'étape de la conception et de la réalisation de l'application suivie de la présentation de quelques écrans de l'application. 
+
+\end{large}
+
+\newpage
+\section{Faculté des Sciences}{\bf}{\it}
+\subsection{Présentation}{\bf}{\it}
+ 
+La Faculté des Sciences propose des parcours académiques longs, diversifiés et intégrés dans le dispositif LMD (Licence, Master, Doctorat), la nouvelle organisation européenne des enseignements.\\
+La Faculté des Sciences comprend une structure administrative et une structure académique
+:\\
+
+            \textbf{Structure administrative}\\
+La structure administrative de la Faculté des Sciences comporte :\\\\
+Une Assemblée de Faculté\\
+Un Conseil de Faculté\\
+Un Doyen \\
+Un Chef de Département\\
+Un Service des Diplômes, des Programmes\\
+Service Financier\\
+Service du Matériel et de la Maintenance\\\\\
+
+  \begin{center}
+                \textbf{Structure académique}
+                \end{center}\\\\
+La structure académique de la Faculté des Sciences comporte quatre départements :\\
+
+Biologie/Géologie(BG),\\
+Mathématiques et Informatique(MI),\\
+Physique/Chimie(PC),\\
+Sciences et Techniques des Activités Physiques et Sportives (STAPS).\\\\\
+
+Chaque formation est gérée par un responsable pédagogique, le Chef de Département. Le choix du système LMD vise à favoriser la mobilité internationale de nos étudiants tout au long de leurs cursus ainsi que une reconnaissance internationale et un rayonnement de nos formations.\\ 
+L'équipe pédagogique est constituée d'enseignants Maîtres de conférence, Maîtres-assistants et coopérants tous hautement qualifiés et impliqués dans l'accompagnement pédagogique des étudiants et qui participent au rayonnement scientifique international de la Faculté.
+
+
+\newpage 
+\subsection{Historique}
+
+La Faculté des Sciences de l'Université de Djibouti a été créée dés la création de l'université de Djibouti en Janvier 2006, portant organisation administrative de l'Université de Djibouti, afin de mettre à la disposition de la jeunesse Djiboutiennes des structures et des compétences appropriées pour l'acquisition des connaissances fondamentales et appliquées dans divers domaines scientifiques.\\
+A ce titre, la Faculté des Sciences\textbf{assure la formation scientifique des étudiants;}\\\textbf{promet, à travers le savoir scientifique et technologique dispensé.\\
+\textbf{un savoir-faire et un savoir-être susceptibles de contribuer au développement .}\\
+\textbf{promet toute mesure favorisant à la formation des enseignants chercheurs.}\\\\
+
+La Faculté des Sciences dispose des enseignants permanents hautement qualifiés dans leurs divers domaines de compétences, tous aux services des étudiants. \\
+A ce jour la faculté compte 52 enseignants dont 12 Professeurs sont vacataires. Mais pour convoquer tous ces enseignants lors des examens, la faculté de sciences ne dispose pas une application qui gère la gestion de convocation des examens de son faculté ce qui oblige a ce que la faculté utilise dans un Excel d'orienter les enseignants  dans des salles et des heurs de surveillances toute on étant vigilants au contraintes lors de l'affectation des enseignants. D'ailleur, ceci est une technique loin de la technologie, du développement et qui résulte pourtant de difficulté et du pur fatigue. Ainsi une perte de temps.\\
+A cette effet, ce serait un atout pour nous de réussir une application qui facilite le département à orienter les enseignants  et de ce dévoiler  de leur ancien technique.\\    
+
+\end{section}
+
+
+
+\newpage
+\section{Présentation du projet}
+\subsection{Description du projet}
+
+
+Il s'agit de réaliser une application java permettant de gérer la gestion de convocation des examens aux faculté de sciences tels que l'insertion des enseignants (par exemple pour les recrutements de(s) enseignant(s) nouveau(s)), modification ou suppression des enseignants (par exemples des enseignants qui ont changé leur cadre ou qui ont été démissionné de leurs fonctions ou autre cas), l'affectation des professeurs au seins des examens ainsi convoquer les professeurs pour son surveillances lors d'un examen.
+
+\subsection{Cahier de charge}
+\subsubsection{Contexte du problème}
+
+Avant de commencer à travailler, nous avions posé certaines hypothèses comme de réaliser sous Framework Prado mais avec certaines temps on a su qu'il nous faut plus de temps. Alors on a rejeté l'hypothèse et nous avons décidé de réutiliser WampServer. Le temps accordé au déroulement du projet est insuffisant. Deux facteurs en sont la raisons : Un mois de ce renseigné sur le projet dont la mesure ou tous les documents nécessaires n'est pas fournis de le départ et qu'on recevait de document de temps en temps; Tous les étudiants travaillant à ce projet sont en pleine formation d'étude à l'université de Djibouti, le temps qu'ils peuvent consacrer au projet est notamment court.\\ 
+Le Projet de la gestion de convocation des examens à la faculté de sciences sont influents sur le déroulement et les lancements des taches qui ce suivent. Une coordination avec les encadreurs prenant part à ce projets est indispensable. De même, certaines conditions tendent à rendre le déroulement de l'application difficile : comme les algorithmes longs vis-à-vis des contraintes longues. Il est indispensable de respecter la forme du notre futur application. 
+
+
+
+\newpage
+\subsubsection{Objectif }
+Le but de mettre en place une application java sur la gestion de convocation des examens de la faculté de science consiste a concevoir au fin du projet une application qui fonctionne et qui sera a l'utilisation de la faculté lors des convocation des enseignants dans le processus des examens. C'est grâce a ALLAH que nous avons pu terminer en mois de mai ce projet qui a été débuter en fin février. Mais aussi notre objectif ne ce limite pas à rendre une application certes mais vise aussi de résulter des connaissances pratique dans le domaine de développement des applications et d'avoir des idées comment entamé un projet et comment progresser en équipe mais aussi de devenir autonome.   
+
+\subsubsection{Les exigences fonctionnalités}\\\\
+\textbf{F1 :} Saisir  les enseignants par les chef de départements en entrant les données d’enseignant  telles que le nom, le prénom, adresse, tél, Nationalité, fonction, type.\\
+\textbf{F2 :} Saisir les différents matières par les chef départements. 
+\textbf{F3 :} Saisir les différents Salles par les chef départements.
+\textbf{F4 :} Affectation des enseignants à une matière à un heur précis avec une sale précis et correction si des modifications sont nécessaires.\\
+\textbf{F5 :} Le département doit pouvoir afficher la liste de convocation de l’enseignant lors des examens.\\
+\textbf{F6 :} Langage de programmation JAVA avec le Système de Gestion de Base de Données
+MySQL.\\
+\textbf{F7 :} La sécurité, l’accès à l'application doit être sécurisé.\\
+
+
+ 
+\subsection{Travail à réaliser et résultat}\\\\
+
+$\blacktriangleright$ Réalisation des maquettes ;\\
+$\blacktriangleright$ Conception et réalisation de la Base de Données ;\\
+ $\blacktriangleright$ Programmation de l'application.\\\\
+Le résultat doit être un dossier zippé avec le nom du quadruplet \textbf{(exemple info.zip)}dans le sous-dossier src ayant le nom \textbf{ges_con_exam}.\\
+Le rapport du projet doit être joint au fichier et rédiger en latex ayant comme nom de dossier projet_tutorier avec un maximum des pages plus le manuel d’utilisation.\\
+
+\end{section}
+
+
+
+\newpage
+\section{Analyse du projet}
+\subsection{Méthode utilisé}\\\\\\
+
+Nous avons utilisé la méthode \textbf{MERISE }(Méthode d'analyse et de Réalisation
+Informatique par Sous-ensembles) pour l'analyse de notre sujet. La méthode\textbf{MERISE } permet de représenter le futur système en passant par les trois cycles, cycle de vie, cycle l'abstraction et cycle de décisions. A chaque cycle correspond un ou plusieurs modèles (modèles qui sont le modèle conceptuel, le modèle logique, le modèle physique et le modèle …).\\
+\textbf{Le Modèle Conceptuel des données(MCD)} : Il permet de modéliser le système étudié en utilisant les concepts entité, attribut, relation et  cardinalité.\\
+
+
+
+
+\newpage 
+{\large\textbf{Graphe du modèle conceptuel des données}}\\
+\includegraphics[scale=1]{nouvo.png} 
+
+
+
+
+\newpage 
+{\large\textbf{Le Modèle Logique des Données (MLD)}}\\\\
+
+Le modèle logique des données consiste à décrire la structure des données utilisées sans faire référence à un langage de programmation.
+Ainsi, l'une des règles de ce passage est que toute entité du MCD est transformée en table dans le MLD. Les propriétés de l'entité deviennent les  attributs de la table et l'identifiant devient la clé primaire de la table.
+Voici les différents schémas relationnels :\\\\\\
+\textbf{Enseignant(Id, nom, prénom, Tél, fonction, type);}\\\
+\textbf{Salle(Id_sal, Nom_sal, Capacité);}\\\
+\textbf{Matière(id_mat, Nom_mat, Coefficient);}\\\
+\textbf{Filiére(Id_fili, Code, Niveau);}\\\
+\textbf{Affecter(#Id, #Id_sal, #Id_mat, dateDebut, dateFin);}\\\
+\textbf{Contient(#Id_fili, #Id_mat)}\\\
+
+
+
+
+
+\newpage
+\subsection{Maquette de l'application}\\\\\\
+
+Avant de programmer les pages de notre application en JAVA avec succès à la base de données MySQL, nous allons passer par une phase de maquettage Il s'agit de créer les pages avec des valeurs statiques dans le but de réaliser l'interface et la  navigation entre les pages.\\
+Nous aurons la page suivante :\\
+
+-Administrateur, c'est la page d'authentification permettant l'administration de l'application. Cette page comporte plusieurs sous-pages.\\\\
+
+
+\begin{minipage}{15 cm}  
+Arborescence de l'application
+\end{minipage}}\\\\\\
+
+\includegraphics[scale=1]{mak.png} \\
+
+\end{section}
+
+
+\newpage 
+\section{Conception et réalisation de l'application}\\\\
+
+La conception et la réalisation de notre application passe par l'utilisation d'un Système de Gestion de Base de Données(SGBD) pour réaliser la base de données et d'un langage  de programmation pour la connexion de des interfaces de saisies à la base. Nous avons utilisé MySQL pour concevoir notre base de données et JAVA pour la partie programmation.\\\\
+
+\subsection{Conception de la base de données avec Mysql}\\\\
+
+Grace à WampServer que nous avons installé sur notre machine Windows, nous avons MySQL qui y est intégré. MySQL est avantageux car c’est un logiciel Open Source c'est à- dire libre. Il fonctionne aussi bien sous Windows que sous d'autres plateformes.\\
+
+Voici l'interface de phpMyAdmin :\\\\
+
+\includegraphics[scale=1]{sql.png}\\ 
+
+Avant de créer les tables, il est obligatoire de créer le nom de la base de données, pour notre cas, le nom donné est gestionconvo.
+Nous avons pu créer six(6) tables (cf. fichier de gesconvo).
+Pour le lien entre la base et les interfaces utilisateurs, nous avons utilisé PHP, qui est un langage de script. Ce langage rend dynamique notre application. Il est également libre. Pour la programmation en Java, il est important d'avoir un éditeur (Netbeans pour notre cas), le WampServer et un navigateur. Les connaissances en HTML ont été un atout majeur dans la programmation de notre application, en particulier nos formulaires.
+
+\subsection{Conception avec NetBeans}\\\\
+
+
+
+\end{section}
+
+
+
+
+\newpage\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{conclusion}
+\thispagestyle{plain}
+\begin{large}\\\\\\
+La réalisation de notre application sur la gestion de convocation des examens de faculté de sciences  est un projet très bénéfique pour nous car elle a été un moment d'approfondir en creusant d'avantage nos connaissances apprises tant théoriques que pratiques en classe. Durant cette période nous avons pu combler certaines zones d'ombres qui régnaient dans notre compréhension.\\\\\\
+
+
+Cette application qu'on a réaliser , permettra aux chefs départements de faculté de sciences de convoquer les enseignants lors des examens au sein de l'Université de Djibouti. Cette expérience a été le premier projet académique sur le JAVA de longue durée sur lequel nous avons travaillé. Ces nouvelles connaissances acquises nous permettent d'entrevoir de nouvelles perspectives d'avenir que nous ne voyons pas arriver si rapidement. Ce travail que nous avons réalisé n'est que le début de notre carrière en programmation JAVA que nous espérons très longue.\\\\\\
+
+
+
+
+Enfin, le travail que nous avons réalisé est presque parfait. Car on se basé seulement les besoins qui existaient. D'autres tâches peuvent être ajouté pour améliorer selon la nécessiter des besoins qui s'étend. Cependant vos remarques et suggestions seront les bienvenues pour son amélioration car toute œuvre humaine n'est jamais parfaite.\\\\\\
+
+\end{large}\\\newpage\chapter*{ANNEXE}
+\addcontentsline{toc}{chapter}{ANNEXE}
+\thispagestyle{plain}
+
+\end{section} 
+
+\end{document}
+
+
+
